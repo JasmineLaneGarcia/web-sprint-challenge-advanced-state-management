@@ -3,6 +3,7 @@ export const initialState = {
 }
 
 const reducer = ()=>{
+    console.log('Reducer');
 }
 
 export default reducer;
