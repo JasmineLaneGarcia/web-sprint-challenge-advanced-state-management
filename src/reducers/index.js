@@ -1,9 +1,15 @@
+import { FETCH_BEGINS, FETCH_SUCCESS, FETCH_FAIL, SET_ERROR } from '../actions/index'
 
 export const initialState = {
-}
+    smurfs: [],
+    isLoading: false,
+    error: "",
+};
 
-const reducer = ()=>{
-    console.log('Reducer');
+const reducer = (state = initialState, action) => {
+    switch (action.type) {
+        case 
+    }
 }
 
 export default reducer;
