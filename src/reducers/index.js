@@ -1,14 +1,52 @@
-import { FETCH_BEGINS, FETCH_SUCCESS, FETCH_FAIL, SET_ERROR } from '../actions/index'
+import { FETCH_START, FETCH_SUCCESS, FETCH_FAIL, SMURF_ADD, SMURF_ERROR } from '../actions/index'
 
 export const initialState = {
     smurfs: [],
     isLoading: false,
-    error: "",
+    error: ""
 };
 
 const reducer = (state = initialState, action) => {
+
     switch (action.type) {
-        case 
+
+        case FETCH_START:
+            return {
+                ...state,
+                isLoading: true
+            };
+
+        case FETCH_SUCCESS:
+            return {
+                ...state,
+                isLoading: false,
+                smurfs: action.payload,
+                error: action.payload
+            };
+
+        case FETCH_FAIL:
+            return {
+                ...state,
+                isLoading: false,
+                error: action.payload
+            };
+
+        case SMURF_ADD:
+            return {
+                ...state,
+                isLoading: false
+            };
+
+        case SMURF_ERROR:
+            return {
+                ...state,
+                isLoading: false,
+                error: "All fields required."
+            };
+
+        default:
+            return state;
+            
     }
 }
 
